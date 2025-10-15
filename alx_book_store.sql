@@ -1,22 +1,22 @@
 CREATE DATABASE alx_book_store;
 USE alx_book_store;
-CREATE TABLE Books(
+CREATE TABLE Books (
     
     book_id INT Primary Key,
-    title VARCHAR(130),
-    author_id INT(Foreign Key referencing Authors table),
+    title VARCHAR(130) NOT NULL,
+    author_id INT,
     price DOUBLE NOT NULL,
     publication_date DATE,
     FOREIGN KEY (author_id) REFERENCES Authors(author_id)
 
 );
-CREATE TABLE Authors(
+CREATE TABLE Authors (
     
     author_id INT Primary Key,
     author_name VARCHAR(215) NOT NULL
 
 );
-CREATE TABLE Customers(
+CREATE TABLE Customers (
     
     customer_id INT Primary Key,
     customer_name VARCHAR(215) NOT NULL,
@@ -24,7 +24,7 @@ CREATE TABLE Customers(
     address TEXT 
 
 );
-CREATE TABLE Orders(
+CREATE TABLE Orders (
     
     order_id INT Primary Key,
     customer_id INT,
@@ -32,7 +32,7 @@ CREATE TABLE Orders(
     FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 
 );
-CREATE TABLE Order_details(
+CREATE TABLE Order_Details (
     
     orderdetailid INT Primary Key,
     order_id INT,
