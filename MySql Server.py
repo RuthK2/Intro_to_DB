@@ -3,7 +3,6 @@ from mysql.connector import Error
 
 def create_database():
     try:
-        # Connect to MySQL server
         connection = mysql.connector.connect(
             host="localhost",
             user="root",
@@ -22,7 +21,7 @@ def create_database():
         if 'connection' in locals() and connection.is_connected():
             cursor.close()
             connection.close()
-            print("MySQL connection closed.")
+            print("MySQL connection closing.")
 
 if __name__ == "__main__":
     create_database()
