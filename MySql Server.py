@@ -21,7 +21,7 @@ def create_database():
         if 'connection' in locals() and connection.is_connected():
             cursor.close()
             connection.close()
-            print("MySQL connection closing.")
+            print("MySQL connection closed.")
 
 if __name__ == "__main__":
     create_database()
